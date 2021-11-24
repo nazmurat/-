@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block tab %}{{title.upper()}}{% endblock %}
+{% block title %}<h1 class='text-center'>Web Scraping and Entry to Database</h1>{% endblock %}
+{% block content %}
+
+    <div class="g-3">
+        <div class="row mb-3">
+            <h1>{{title.upper()}} NEWS</h1>
+        </div>
+        <div class="row">
+            <h1>Summarized News</h1>
+        </div>
+    </div>
+
+
+
+    {% for result in rev %}
+        <div class="g-3 mb-3">
+            <div class="row mb-3">    
+                <h3>{{result[1]}}</h3><br>
+            </div>
+            <div class="row">
+                {{result[0]}}
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
